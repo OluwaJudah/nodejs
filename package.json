@@ -6,7 +6,10 @@
   "author": "alphasec",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.19.2"
+    "bullmq": "^4",
+    "ioredis": "^5",
+    "dotenv": "^16",
+    "twilio": "^4"
   },
   "scripts": {
     "start": "node app.js"
