@@ -7,15 +7,17 @@
   "license": "MIT",
   "dependencies": {
     "bullmq": "^4",
-    "dotenv": "^16",
+    "dotenv": "^16.6.1",
     "ioredis": "^5",
     "twilio": "^4.23.0"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "ts-node index.ts"
   },
-  "type": "module",
+  "type": "commonjs",
   "devDependencies": {
-    "@types/node": "^24.1.0"
+    "@types/node": "^24.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
