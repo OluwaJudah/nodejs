@@ -1,12 +1,15 @@
-import twilio from 'twilio';
+require("dotenv").config();
+const client = require("twilio")(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
 
-const client = twilio(process.env.TWILIO_SID!, process.env.TWILIO_AUTH_TOKEN!);
-const FROM_NUMBER = 'whatsapp:+14155238886';
-
-export const sendWhatsApp = async (to: string, body: string) => {
+async function sendWhatsApp(to: string, message: string) {
   return await client.messages.create({
-    body,
-    from: FROM_NUMBER,
+    body: message,
+    from: `whatsapp:${process.env.FROM_WHATSAPP}`, // Your Twilio sandbox or WhatsApp number
     to: `whatsapp:${to}`,
   });
-};
+}
+
+module.exports = { sendWhatsApp };
